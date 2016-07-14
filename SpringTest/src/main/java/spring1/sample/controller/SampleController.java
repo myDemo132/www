@@ -83,8 +83,15 @@ public class SampleController {
          
         return mv;
     }
-
-
+    
+    @RequestMapping(value="/sample/hihihi.do")
+    public ModelAndView deldd(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList.do");
+         
+        sampleService.deleteBoard(commandMap.getMap());
+         
+        return mv;
+    }
     
     
 //    @RequestMapping(value="/sample/testMapArgumentResolver.do")
